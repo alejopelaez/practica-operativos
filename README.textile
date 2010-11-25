@@ -32,3 +32,11 @@ sudo make
 </pre>
 
 Esto creará el archivo *libso-eafit.so* el cual se copiará en la carpeta */usr/lib*. Además de esto, se copiará el archivo *SO.h* en la carpeta */usr/include/*
+
+h2. Compilación y ejecución del programa de prueba
+
+Una vez corrido el makefile con los permisos necesarios, es fácil compilar el programa de ejemplo, solo es necesario correr el siguiente comando
+
+<pre>g++ -lso-eafit practica.cpp -o practica && ./practica</pre>
+
+Esto compilará y correrá el programa compilado.
