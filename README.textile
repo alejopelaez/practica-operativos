@@ -8,6 +8,7 @@ La otra función, llamada *CpuUsage*,  retorna el porcentaje de uso de la CPU de
 
 A continuación se muestra un programa de prueba en linux que utiliza ambas funciones de la librería.
 
+<pre>
     #include <cstdio>
     #include "linux/SO.h"
     int main(){    
@@ -20,3 +21,4 @@ A continuación se muestra un programa de prueba en linux que utiliza ambas func
          printf("%f\n",SO::CpuUsage());
          return 0;
     }
+</pre>
