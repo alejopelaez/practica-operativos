@@ -1,0 +1,22 @@
+h1. Acerca de
+
+Esta práctica ofrece una librería con dos funciones que se podrán utilizar desde Windows y desde Linux.
+
+La primera función se llama *GetProcessList*, la cual retorna una lista con los _process id_ de los procesos que están corriendo actualmente en la máquina. Para invocar esta función, se debe enviar una referencia de una variable entera. En esta variable, al finalizar la función modificará este valor y allí se podrá encontrar el total de procesos corriendo.
+
+La otra función, llamada *CpuUsage*,  retorna el porcentaje de uso de la CPU desde la última vez que se utilizó esta función. Es decir, cuando se llama por primera vez, retorna el uso de la CPU desde que se inició la máquina, pero la segunda vez retorna el uso de la CPU desde que se llamó la primera vez la función. Esta función no se debe llamar muy seguido, se recomienda mínimo cada segundo para poder apreciar un cambio significativo en el uso de la CPU.
+
+A continuación se muestra un programa de prueba en linux que utiliza ambas funciones de la librería.
+
+    #include <cstdio>
+    #include "linux/SO.h"
+    int main(){    
+         int* processes = NULL;
+         int numP = 0;
+         processes = SO::GetProcessList(&numP);
+         printf("Procesos:\n");
+         for(int i = 0; i < numP; ++i)
+         printf("Proceso %d: %d\n",i+1,processes[i]);
+         printf("%f\n",SO::CpuUsage());
+         return 0;
+    }
