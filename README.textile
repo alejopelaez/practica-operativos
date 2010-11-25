@@ -22,3 +22,13 @@ A continuación se muestra un programa de prueba en linux que utiliza ambas func
          return 0;
     }
 </pre>
+
+h1. Compilación en Linux
+
+Para compilar la librería en Linux, debemos correr el makefile como sudo. Es necesario correrlo con sudo pues se copiarán archivos en */usr/lib* y en */usr/include* y se necesitan permisos para esto.
+
+<pre>
+sudo make
+</pre>
+
+Esto creará el archivo *libso-eafit.so* el cual se copiará en la carpeta */usr/lib*. Además de esto, se copiará el archivo *SO.h* en la carpeta */usr/include/*
