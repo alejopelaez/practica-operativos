@@ -1,9 +1,9 @@
-all: compile install
+all: compile
 
 compile: libSO.cpp
 	gcc libSO.cpp -shared -o libso-eafit.so 
 
-install: copy_lib copy_header
+install: compile copy_lib copy_header
 
 copy_lib:
 	cp libso-eafit.so /usr/lib/
