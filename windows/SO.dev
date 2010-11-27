@@ -1,7 +1,7 @@
 [Project]
 FileName=SO.dev
 Name=SO
-UnitCount=2
+UnitCount=1
 Type=3
 Ver=1
 ObjFiles=
@@ -29,16 +29,6 @@ SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=0000000000000001000000
 
-[Unit1]
-FileName=libSO.h
-CompileCpp=1
-Folder=libSO
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
 [VersionInfo]
 Major=0
 Minor=1
@@ -58,6 +48,16 @@ ProductVersion=
 AutoIncBuildNr=0
 
 [Unit2]
+FileName=libSO.cpp
+CompileCpp=1
+Folder=SO
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit1]
 FileName=libSO.cpp
 CompileCpp=1
 Folder=SO

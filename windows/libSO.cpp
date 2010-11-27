@@ -1,5 +1,9 @@
-#include "libSO.h"
 #define _WIN32_WINNT 0x0501
+#if BUILDING_DLL
+# define DLLIMPORT __declspec (dllexport)
+#else
+# define DLLIMPORT __declspec (dllimport)
+#endif
 #include <windows.h>
 #include <winbase.h>
 #include <psapi.h>

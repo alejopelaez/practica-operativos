@@ -43,3 +43,20 @@ Una vez corrido el makefile con los permisos necesarios, es fácil compilar el p
 <pre>g++ -lso-eafit practica.cpp -o practica && ./practica</pre>
 
 Esto compilará y correrá el programa compilado.
+
+h1. Compilación en Windows
+Para compilar la librería en windows hay que asegurarse que el simbolo BUILDING_DLL este definido, que se este compilando como un dll (algo equivalente a la opción -shared en minGW), y que se deben linkear las librerias psapi y Kernel32 (en minGW se -lpsapi -lKernel32).
+
+Si se va compilar usando el IDE dev-c++ (fue como lo hicimos nosotros), en las opciones del proyecto bajo la pestaña general se selecciona type como win32 dll. Luego en las pestaña parameters bajo Compiler y C++ compiler se añade la siguiente linea
+<pre>
+-DBUILDING_DLL=1
+</pre>
+Bajo Linker se añade est otro
+<pre>
+--no-export-all-symbols --add-stdcall-alias
+-lpsapi -lKernel32
+</pre>
+Por último bajo la pestaña build options hay que asegurarse que el nombre del archivo de salida sea SO.dll
+
+h2. Compilación y ejecución del programa de prueba
+Ya generado el dll se puede compilar el programa de prueba desde el mismo dev-c++ como un archivo solo(no hay necesidad de hacer un pryecto), lo único es que hay que ir a tools->compiler options y añadir la linea -lSO en las opciones del linker. Ademas es necesario que el .h de la libreria y el dll esten en la misma carpeta o en las carpetas del sistema (o cualquier que este definida en el ide)
