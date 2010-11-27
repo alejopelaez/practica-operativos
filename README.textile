@@ -46,7 +46,7 @@ Esto compilará y correrá el programa compilado.
 
 h1. Compilación en Windows
 
-Para compilar la librería en windows hay que asegurarse que el simbolo BUILDING_DLL este definido, que se este compilando como un dll (algo equivalente a la opción -shared en minGW), y que se deben linkear las librerias psapi y Kernel32 (en minGW se -lpsapi -lKernel32).
+Para compilar la librería en windows hay que asegurarse que el simbolo BUILDING_DLL este definido, que se este compilando como un dll (algo equivalente a la opción -shared en minGW), y que se deben linkear las librerias psapi y Kernel32 (en minGW es -lpsapi -lKernel32).
 
 Si se va compilar usando el IDE dev-c++ (fue como lo hicimos nosotros), en las opciones del proyecto bajo la pestaña general se selecciona type como win32 dll. Luego en las pestaña parameters bajo Compiler y C++ compiler se añade la siguiente linea
 
