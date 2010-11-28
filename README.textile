@@ -63,6 +63,8 @@ Bajo Linker se añade est otro
 
 Por último bajo la pestaña build options hay que asegurarse que el nombre del archivo de salida sea SO.dll
 
+Se generan 2 archivos, uno es libSO.a y el otro es SO.dll. El primero debe ir a una carpeta donde el compilador busca las librerias (para dev-c++ esta es la carpeta /ruta-a-dev-cpp/lib), y SO.dll debe ir en la misma carpeta de los ejecutables que usen la librería on en C:\Windows\System32
+
 h2. Compilación y ejecución del programa de prueba
 
 Ya generado el dll se puede compilar el programa de prueba desde el mismo dev-c++ como un archivo solo(no hay necesidad de hacer un pryecto), lo único es que hay que ir a tools->compiler options y añadir la linea -lSO en las opciones del linker. Ademas es necesario que el .h de la libreria y el dll esten en la misma carpeta o en las carpetas del sistema (o cualquier que este definida en el ide)
