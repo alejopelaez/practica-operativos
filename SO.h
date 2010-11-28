@@ -13,6 +13,9 @@
   #include <unistd.h>
 #endif
 
+#ifdef __cplusplus
+    extern "C" {
+#endif
 
 namespace SO{
     /**
@@ -30,4 +33,15 @@ namespace SO{
      */
     DLLIMPORT float CpuUsage();
 }
+
+#ifdef __cplusplus
+    }
 #endif
+
+#if BUILDING_DLL
+    #ifdef __cplusplus
+        }
+    #endif
+#endif
+
+#endif      //LIB_SO  

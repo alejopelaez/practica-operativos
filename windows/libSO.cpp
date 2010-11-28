@@ -1,12 +1,16 @@
 #define _WIN32_WINNT 0x0501
-#if BUILDING_DLL
-# define DLLIMPORT __declspec (dllexport)
+#ifdef BUILDING_DLL
+    #define DLLIMPORT __declspec (dllexport)
 #else
-# define DLLIMPORT __declspec (dllimport)
+    # define DLLIMPORT __declspec (dllimport)
 #endif
 #include <windows.h>
 #include <winbase.h>
 #include <psapi.h>
+
+#ifdef __cplusplus
+    extern "C" {
+#endif
 
 namespace SO{
     ULARGE_INTEGER lasti, lastk, lastu;
@@ -72,3 +76,7 @@ BOOL APIENTRY DllMain (HINSTANCE hInst     /* Library instance handle. */ ,
     /* Returns TRUE on success, FALSE on failure */
     return TRUE;
 }
+
+#ifdef __cplusplus
+    }
+#endif
