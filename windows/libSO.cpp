@@ -25,7 +25,7 @@ namespace SO{
         return ans;
     }
     
-    DLLIMPORT float GetCpuUsage(){
+    DLLIMPORT float CpuUsage(){
         FILETIME i, k, u;
         GetSystemTimes(&i, &k, &u);
 
