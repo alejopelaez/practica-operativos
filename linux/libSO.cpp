@@ -1,6 +1,6 @@
 #ifndef _CSTDIO
 #define _CSTDIO 1
-#include <cstdio>
+#include <stdio.h>
 #endif
 
 #ifndef _DIRENT_
@@ -8,15 +8,15 @@
 #include <dirent.h>
 #endif
 
-#ifndef _VECTOR_
+/*#ifndef _VECTOR_
 #define _VECTOR_ 1
 #include <vector>
 #endif
 
 #ifndef _C_STRING_
 #define _C_STRING_ 1
-#include <cstring>
-#endif
+#include <string.h>
+#endif*/
 
 #ifndef _STD_LIB_
 #define _STD_LIB_ 1
@@ -32,11 +32,12 @@
     extern "C" {
 #endif
 
-using std::vector;
+        //using std::vector;
 
-namespace SO{
+
   int *GetProcessList(int *nroProcesos){
-    vector<int> ans;
+      //vector<int> ans;
+      int all[2000];
     DIR *dir = NULL;
     dir = opendir("/proc");
     struct dirent *pent = NULL;
@@ -47,14 +48,27 @@ namespace SO{
     }
     else{
       int tmp;
+      int count = 0;
+      int j = 0;
       while(pent = readdir(dir)){
         tmp = atoi(pent->d_name);
-        if(tmp > 0)
-          ans.push_back(tmp);
+        all[j] = tmp;
+        j++;
+        if(tmp > 0)count++;
+        //          ans.push_back(tmp);
       }
-      *nroProcesos = (int)ans.size();
+      closedir(dir);      
+      
+      //      *nroProcesos = (int)ans.size();
+      *nroProcesos = count;
+      int c = 0;
       int *ret = new int[*nroProcesos];
-      memcpy(ret, &ans[0], sizeof(int)*(*nroProcesos));
+      for(int i = 0; i <= j; ++i){
+          if(all[i] > 0){
+              ret[c] = all[i];
+              c++;
+          }
+      }
       return ret;
     }
   }
@@ -91,7 +105,7 @@ namespace SO{
       return ((float)dusage)/((float)dtotal);
     }        
   }
-}
+
 
 #ifdef __cplusplus
     }
