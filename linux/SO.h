@@ -13,8 +13,11 @@
   #include <unistd.h>
 #endif
 
+#ifdef __cplusplus
+    extern "C" {
+#endif
 
-namespace SO{
+
     /**
      * Retorna un arreglo con los pid de los procesos
      * que corren actualmente en el SO.
@@ -29,5 +32,16 @@ namespace SO{
      * la utilización desde que inicio el computador.
      */
     DLLIMPORT float CpuUsage();
-}
+
+
+#ifdef __cplusplus
+    }
 #endif
+
+#if BUILDING_DLL
+    #ifdef __cplusplus
+        }
+    #endif
+#endif
+
+#endif      //LIB_SO  

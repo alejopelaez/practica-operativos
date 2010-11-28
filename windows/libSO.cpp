@@ -12,7 +12,6 @@
     extern "C" {
 #endif
 
-namespace SO{
     ULARGE_INTEGER lasti, lastk, lastu;
     
     DLLIMPORT int *GetProcessList(int *nroProcesos){
@@ -51,7 +50,6 @@ namespace SO{
 
         return float((float)(du+dk)/(float)(du+dk+di));
     }
-}
 
 
 BOOL APIENTRY DllMain (HINSTANCE hInst     /* Library instance handle. */ ,

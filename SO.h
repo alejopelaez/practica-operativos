@@ -17,7 +17,7 @@
     extern "C" {
 #endif
 
-namespace SO{
+
     /**
      * Retorna un arreglo con los pid de los procesos
      * que corren actualmente en el SO.
@@ -32,7 +32,7 @@ namespace SO{
      * la utilización desde que inicio el computador.
      */
     DLLIMPORT float CpuUsage();
-}
+
 
 #ifdef __cplusplus
     }

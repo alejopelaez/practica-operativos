@@ -28,6 +28,9 @@
 #include <unistd.h>
 #endif
 
+#ifdef __cplusplus
+    extern "C" {
+#endif
 
 using std::vector;
 
@@ -89,3 +92,7 @@ namespace SO{
     }        
   }
 }
+
+#ifdef __cplusplus
+    }
+#endif
