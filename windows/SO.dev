@@ -1,6 +1,6 @@
 [Project]
 FileName=SO.dev
-Name=SO
+Name=so-eafit
 UnitCount=1
 Type=3
 Ver=1
@@ -17,8 +17,8 @@ IsCpp=1
 Icon=
 ExeOutput=
 ObjectOutput=
-OverrideOutput=0
-OverrideOutputName=libSO.dll
+OverrideOutput=1
+OverrideOutputName=so-eafit.dll
 HostApplication=
 Folders=
 CommandLine=
