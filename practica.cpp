@@ -1,5 +1,5 @@
 #include <cstdio>
-#include "linux/SO.h"
+#include "SO.h"
 
 int main(){    
     int* processes = NULL;
